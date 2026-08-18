@@ -1,6 +1,6 @@
 [project]
 name = "quant-trade"
-version = "0.1.0"
+version = "0.0.1"
 description = "A股个人量化交易系统（研究回测为主，预留实盘扩展）"
 readme = "README.md"
 authors = [
@@ -12,9 +12,6 @@ dependencies = [
     "pydantic-settings>=2.15.0",
     "typer>=0.27.1",
 ]
-
-[project.scripts]
-quant-trade = "quant_trade:main"
 
 [[tool.uv.index]]
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"

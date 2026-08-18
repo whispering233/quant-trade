@@ -5,7 +5,7 @@
 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，
 版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
-## Unreleased
+## [0.0.1] - 2026-08-18
 
 ### Added
 
@@ -15,6 +15,11 @@
 - 统一日志 `utils/logger.py`（控制台 + 按天滚动文件）
 - 架构设计文档 `doc/design/architecture.md` 与任务清单 `doc/design/tasks.md`
 - notebook 迁移至 `notebooks/`，注册 quant-trade Jupyter 内核
+- 7 个业务分包占位（core/data/strategy/backtest/portfolio/risk/execution）
+
+## Unreleased
+
+### Added
 
 ### Changed
 

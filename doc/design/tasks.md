@@ -7,26 +7,22 @@
 
 | 里程碑 | 名称 | 目标 | 状态 |
 | :--- | :--- | :--- | :--- |
-| M0 | 项目初始化 | 脚手架、工具链、配置入口就绪 | 未开始 |
+| M0 | 项目初始化 | 脚手架、工具链、配置入口就绪 | ✅ 完成（v0.0.1） |
 | M1 | 数据层 | akshare → sqlite → DataProvider 全链路可用 | 未开始 |
 | M2 | 回测引擎 | 撮合/费用/滑点/账户/绩效，端到端回测跑通 | 未开始 |
 | M3 | 策略层与 CLI | 示例策略 + 回测 CLI + 绩效输出 | 未开始 |
 | M4 | 实盘扩展（预留） | portfolio / risk / execution 接口定义 | 未开始（仅接口） |
 
-> 注：M4 仅接口定义，不实现实盘下单。任务卡片在技术栈确认后细化补充。
+## M0 项目初始化 ✅ 已完成（2026-08-18，v0.0.1）
 
-## M0 项目初始化
-
-- [x] 确认技术栈（uv + Python 3.12 + polars + typer + ruff + pyright + pytest + 自研回测引擎）
-- [x] `uv init --package` 初始化项目脚手架（src 布局 + pyproject.toml + .python-version 3.12）
-- [x] 依赖安装：polars/typer/pydantic-settings + dev: ruff/pyright/pytest/ipykernel，`uv sync` 验证
-- [x] 补充 `.gitignore`（.venv/、__pycache__/、.virtual_documents/ 等，保留现有 test 条目）
-- [x] pyproject.toml 配置 ruff / pyright / pytest 工具链
-- [x] `src/quant_trade/config.py` 统一配置入口（pydantic-settings）+ `.env.example`
-- [x] `src/quant_trade/utils/` 基础工具（logger 日志配置）
-- [x] `.github/workflows/ci.yml`：ruff → pyright → pytest
-- [x] 迁移 `test/test.ipynb` 至 `notebooks/`，注册 ipykernel 内核（quant-trade）
-- [x] 冒烟验证：`uv run python -c "import quant_trade"` + `uv run pytest` 空跑通过
+- 技术栈确认：uv + Python 3.12 + polars + typer + ruff + pyright + pytest + 自研回测引擎
+- 脚手架：`uv init --package`（src 布局）、依赖锁定（uv.lock）、清华镜像持久化
+- 工具链配置：ruff / pyright / pytest + `ci.yml`（ruff → pyright → pytest）
+- `config.py` 统一配置入口（pydantic-settings）+ `.env.example`
+- `utils/logger.py` 统一日志（控制台 + 按天滚动）
+- notebook 迁移至 `notebooks/`，注册 quant-trade Jupyter 内核
+- 7 个业务分包占位（core/data/strategy/backtest/portfolio/risk/execution）
+- 冒烟验证通过：import / ruff / pyright / pytest 全绿
 
 ## M1 数据层
 

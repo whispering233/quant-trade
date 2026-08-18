@@ -1,2 +1,7 @@
-def main() -> None:
-    print("Hello from quant-trade!")
+"""quant-trade：A股个人量化交易系统。
+
+分层混合架构：纯函数策略核心 + 事件驱动外围壳，回测/实盘共用同一份策略代码。
+现阶段以研究回测为主，实盘扩展（portfolio/risk/execution）仅预留接口。
+"""
+
+__version__ = "0.0.1"
