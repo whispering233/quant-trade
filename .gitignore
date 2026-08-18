@@ -1,1 +1,31 @@
+# 测试 notebook（保留：现有 test.ipynb 迁移到 notebooks/ 后删除此条目）
 test
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# 虚拟环境
+.venv/
+venv/
+
+# 工具缓存
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# 环境变量（.env.example 提交，真实 .env 不提交）
+.env
+.env.*
+!.env.example
+
+# Jupyter
+.virtual_documents/
+notebooks/.ipynb_checkpoints/
+
+# 数据与日志（本地生成，不入库）
+data/
+logs/

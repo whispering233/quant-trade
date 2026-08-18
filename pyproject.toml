@@ -1,0 +1,55 @@
+[project]
+name = "quant-trade"
+version = "0.1.0"
+description = "A股个人量化交易系统（研究回测为主，预留实盘扩展）"
+readme = "README.md"
+authors = [
+    { name = "whispering2333", email = "whispering2333@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "polars>=1.43.2",
+    "pydantic-settings>=2.15.0",
+    "typer>=0.27.1",
+]
+
+[project.scripts]
+quant-trade = "quant_trade:main"
+
+[[tool.uv.index]]
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+default = true
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.3.0",
+    "pyright>=1.1.411",
+    "pytest>=9.1.1",
+    "ruff>=0.16.3",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["src", "tests"]
+exclude = ["doc"]  # 文档中的 Python 示例代码保持人工排版，不参与 lint/format
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "C4"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.pyright]
+pythonVersion = "3.12"
+typeCheckingMode = "basic"
+include = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+pythonpath = ["src"]
