@@ -1,6 +1,3 @@
-# 测试 notebook（保留：现有 test.ipynb 迁移到 notebooks/ 后删除此条目）
-test
-
 # Python
 __pycache__/
 *.py[cod]
